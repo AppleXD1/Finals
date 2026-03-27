@@ -7,7 +7,7 @@ using UnityEngine.InputSystem;
 public class CombotSystem : MonoBehaviour
 {
     public PlayerInput playerInput;
-    private InputAction moveAction;
+    private InputAction attackAction;
 
     public List<AttackSO> combo;
     float lastClickTime;
@@ -22,14 +22,14 @@ public class CombotSystem : MonoBehaviour
     void Start()
     {
         playerInput = GetComponent<PlayerInput>();
-        moveAction = playerInput.actions.FindAction("Move");
+        attackAction = playerInput.actions.FindAction("Attack");
         animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(moveAction.triggered)
+        if(attackAction.triggered)
         {
             Attack();
         }    
@@ -63,13 +63,13 @@ public class CombotSystem : MonoBehaviour
         if(animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.9f && animator.GetCurrentAnimatorStateInfo(0).IsTag("Attack"))
         {
             Invoke("EndCombo", 1);
+            animator.SetBool("Attack", false);
         }
     }
 
     void EndCombo()
     {
         comboCounter = 0;
-        animator.SetBool("Attack", false);
         lastComboEnd = Time.time;
     }
 }
