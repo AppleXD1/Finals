@@ -5,6 +5,7 @@ public class Player : MonoBehaviour
 {
     public PlayerInput playerInput;
     private InputAction moveAction;
+    public Transform cameraTransform;
 
     public float moveSpeed = 6f;
     public Rigidbody rb;
@@ -22,20 +23,6 @@ public class Player : MonoBehaviour
             moveAction = playerInput.actions.FindAction("Move");
     }
 
-    void OnEnable()
-    {
-        if (moveAction == null && playerInput != null)
-            moveAction = playerInput.actions.FindAction("Move");
-
-        if (moveAction != null)
-            moveAction.Enable();
-    }
-
-    void OnDisable()
-    {
-        if (moveAction != null)
-            moveAction.Disable();
-    }
 
     void Update()
     {
@@ -55,7 +42,16 @@ public class Player : MonoBehaviour
 
     void MovePlayer()
     {
-        Vector3 moveDirection = transform.forward * moveInput.y + transform.right * moveInput.x;
+        Vector3 forward = cameraTransform.forward;
+        Vector3 right = cameraTransform.right;
+
+        forward.y = 0;
+        right.y = 0;
+
+        forward.Normalize();
+        right.Normalize();
+
+        Vector3 moveDirection = forward * moveInput.y + right * moveInput.x;
         moveDirection.Normalize();
 
         Vector3 newPosition = rb.position + moveDirection * moveSpeed * Time.fixedDeltaTime;
