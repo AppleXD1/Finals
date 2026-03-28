@@ -1,4 +1,4 @@
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,12 +6,12 @@ using UnityEngine.InputSystem;
 
 public class CombotSystem : MonoBehaviour
 {
-    public PlayerInput playerInput;
-    private InputAction attackAction;
+  
 
     public List<AttackSO> combo;
     float lastClickTime;
     float timeBetweenCombo = 0.3f;
+    float nextAttackTime = 0f;
     float lastComboEnd;
     int comboCounter;
 
@@ -21,15 +21,13 @@ public class CombotSystem : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        playerInput = GetComponent<PlayerInput>();
-        attackAction = playerInput.actions.FindAction("Attack");
         animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(attackAction.triggered)
+        if(Input.GetMouseButtonDown(0))
         {
             Attack();
         }    
@@ -38,21 +36,29 @@ public class CombotSystem : MonoBehaviour
 
     void Attack()
     {
-        if(Time.time - lastComboEnd > timeBetweenCombo && comboCounter <= combo.Count)
+        if (Time.time - lastComboEnd > timeBetweenCombo && comboCounter < combo.Count)
         {
             CancelInvoke("EndCombo");
-            if(Time.time - lastComboEnd >= 0.2f)
+            var m_clipInfo = animator.GetCurrentAnimatorClipInfo(0);
+            float clipLength = m_clipInfo[0].clip.length;
+            if (Time.time - lastClickTime >= clipLength - 0.1)
             {
                 animator.runtimeAnimatorController = combo[comboCounter].animatorOV;
-                animator.Play("Attack",0,0);
-                animator.SetBool("Attack", true);
+                animator.Play("Attack", 1, 0);
+                animator.ResetTrigger("Attack");
+                animator.SetTrigger("Attack");
                 sword.Damage = combo[comboCounter].Damage;
                 comboCounter++;
                 lastClickTime = Time.time;
 
-                if(comboCounter > combo.Count)
+                if (comboCounter >= combo.Count)
                 {
                     comboCounter = 0;
+                }
+                if (comboCounter < combo.Count)
+                {
+                    Debug.Log("Current Combo Index: " + comboCounter);
+                    Debug.Log("Attack Name: " + combo[comboCounter].name);
                 }
             }
         }
@@ -60,10 +66,9 @@ public class CombotSystem : MonoBehaviour
 
     void ExitAttack()
     {
-        if(animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.9f && animator.GetCurrentAnimatorStateInfo(0).IsTag("Attack"))
+        if(animator.GetCurrentAnimatorStateInfo(1).normalizedTime > 0.9f && animator.GetCurrentAnimatorStateInfo(1).IsTag("Attack"))
         {
             Invoke("EndCombo", 1);
-            animator.SetBool("Attack", false);
         }
     }
 

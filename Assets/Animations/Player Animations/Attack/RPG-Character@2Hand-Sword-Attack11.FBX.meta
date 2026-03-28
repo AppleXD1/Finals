@@ -37,8 +37,8 @@ ModelImporter:
       name: LightAttack3
       takeName: Take 001
       internalID: 1827226128182048838
-      firstFrame: 0
-      lastFrame: 36
+      firstFrame: 2
+      lastFrame: 32.3
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
