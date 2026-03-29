@@ -248,7 +248,7 @@ Transform:
   m_GameObject: {fileID: 498868687}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.7329338, z: 0, w: 0.68029994}
-  m_LocalPosition: {x: -14.298279, y: 5.2070003, z: 1.8854947}
+  m_LocalPosition: {x: -4.6490636, y: 5.2070003, z: 2.6015844}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -372,7 +372,7 @@ Transform:
   m_GameObject: {fileID: 1186786508}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.7329338, z: 0, w: 0.68029994}
-  m_LocalPosition: {x: -14.298279, y: 5.2070003, z: 1.8854947}
+  m_LocalPosition: {x: -4.6490636, y: 5.2070003, z: 2.6015844}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -689,7 +689,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -15.18449, y: 2.8665, z: 0.50793}
-  m_LocalScale: {x: 1.7159, y: 1.7159, z: 1.7159}
+  m_LocalScale: {x: 3.0050554, y: 3.0050554, z: 3.0050554}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -726,7 +726,7 @@ Transform:
   m_GameObject: {fileID: 2145980320}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.7329338, z: -0, w: 0.6803}
-  m_LocalPosition: {x: -18.409216, y: 2.857, z: 0.80391026}
+  m_LocalPosition: {x: -8.76, y: 2.857, z: 1.52}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -879,7 +879,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5aab035dda285e040a0f0c47f18956e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CombotSystem
-  playerInput: {fileID: 0}
   combo:
   - {fileID: 11400000, guid: 50ca85a9c8f48a64ca6c1ffc7f40521e, type: 2}
   - {fileID: 11400000, guid: 3155edea5d44cc142a7b4f1de16e1347, type: 2}

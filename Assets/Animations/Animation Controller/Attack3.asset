@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AttackSO
   animatorOV: {fileID: 22100000, guid: c45ad55d361d2a946b77be76d7c93d05, type: 2}
   Damage: 8
+  comboWaitTime: 0.5
+  useFullBody: 1
