@@ -1,0 +1,427 @@
+fileFormatVersion: 2
+guid: 20b6002ffdd985141bcb3f9c0a0031f7
+timeCreated: 1503786115
+licenseType: Store
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Devil
+    100004: Devil1_Head
+    100006: Devil1_Hips
+    100008: Devil1_LeftArm
+    100010: Devil1_LeftFoot
+    100012: Devil1_LeftForeArm
+    100014: Devil1_LeftHand
+    100016: Devil1_LeftHand1
+    100018: Devil1_LeftHand10
+    100020: Devil1_LeftHand2
+    100022: Devil1_LeftHand3
+    100024: Devil1_LeftHand4
+    100026: Devil1_LeftHand4 1
+    100028: Devil1_LeftHand5
+    100030: Devil1_LeftHand5 1
+    100032: Devil1_LeftHand6
+    100034: Devil1_LeftHand7
+    100036: Devil1_LeftHand8
+    100038: Devil1_LeftHand9
+    100040: Devil1_LeftLeg
+    100042: Devil1_LeftShoulder
+    100044: Devil1_LeftToeBase
+    100046: Devil1_LeftUpLeg
+    100048: Devil1_Neck
+    100050: Devil1_Reference
+    100052: Devil1_RightArm
+    100054: Devil1_RightFoot
+    100056: Devil1_RightForeArm
+    100058: Devil1_RightHand
+    100060: Devil1_RightHand11
+    100062: Devil1_RightHand12
+    100064: Devil1_RightHand13
+    100066: Devil1_RightHand14
+    100068: Devil1_RightHand15
+    100070: Devil1_RightHand16
+    100072: Devil1_RightHand17
+    100074: Devil1_RightHand18
+    100076: Devil1_RightHand18 1
+    100078: Devil1_RightHand19
+    100080: Devil1_RightHand19 1
+    100082: Devil1_RightHand20
+    100084: Devil1_RightLeg
+    100086: Devil1_RightShoulder
+    100088: Devil1_RightToeBase
+    100090: Devil1_RightUpLeg
+    100092: Devil1_Spine
+    100094: Devil1_Spine1
+    100096: Head
+    100098: Hips
+    100100: LeftArm
+    100102: LeftFoot
+    100104: LeftForeArm
+    100106: LeftHand
+    100108: LeftLeg
+    100110: LeftShoulder
+    100112: LeftToeBase
+    100114: LeftUpLeg
+    100116: Neck
+    100118: QuickRigCharacter_Guides
+    100120: Reference
+    100122: RightArm
+    100124: RightFoot
+    100126: RightForeArm
+    100128: RightHand
+    100130: RightLeg
+    100132: RightShoulder
+    100134: RightToeBase
+    100136: RightUpLeg
+    100138: Spine
+    100140: Spine1
+    100142: transform1
+    100144: transform10
+    100146: transform11
+    100148: transform12
+    100150: transform12 1
+    100152: transform13
+    100154: transform13 1
+    100156: transform14
+    100158: transform15
+    100160: transform16
+    100162: transform17
+    100164: transform18
+    100166: transform19
+    100168: transform2
+    100170: transform2 1
+    100172: transform20
+    100174: transform21
+    100176: transform22
+    100178: transform23
+    100180: transform3
+    100182: transform3 1
+    100184: transform4
+    100186: transform5
+    100188: transform6
+    100190: transform7
+    100192: transform8
+    100194: transform9
+    400000: //RootNode
+    400002: Devil
+    400004: Devil1_Head
+    400006: Devil1_Hips
+    400008: Devil1_LeftArm
+    400010: Devil1_LeftFoot
+    400012: Devil1_LeftForeArm
+    400014: Devil1_LeftHand
+    400016: Devil1_LeftHand1
+    400018: Devil1_LeftHand10
+    400020: Devil1_LeftHand2
+    400022: Devil1_LeftHand3
+    400024: Devil1_LeftHand4
+    400026: Devil1_LeftHand4 1
+    400028: Devil1_LeftHand5
+    400030: Devil1_LeftHand5 1
+    400032: Devil1_LeftHand6
+    400034: Devil1_LeftHand7
+    400036: Devil1_LeftHand8
+    400038: Devil1_LeftHand9
+    400040: Devil1_LeftLeg
+    400042: Devil1_LeftShoulder
+    400044: Devil1_LeftToeBase
+    400046: Devil1_LeftUpLeg
+    400048: Devil1_Neck
+    400050: Devil1_Reference
+    400052: Devil1_RightArm
+    400054: Devil1_RightFoot
+    400056: Devil1_RightForeArm
+    400058: Devil1_RightHand
+    400060: Devil1_RightHand11
+    400062: Devil1_RightHand12
+    400064: Devil1_RightHand13
+    400066: Devil1_RightHand14
+    400068: Devil1_RightHand15
+    400070: Devil1_RightHand16
+    400072: Devil1_RightHand17
+    400074: Devil1_RightHand18
+    400076: Devil1_RightHand18 1
+    400078: Devil1_RightHand19
+    400080: Devil1_RightHand19 1
+    400082: Devil1_RightHand20
+    400084: Devil1_RightLeg
+    400086: Devil1_RightShoulder
+    400088: Devil1_RightToeBase
+    400090: Devil1_RightUpLeg
+    400092: Devil1_Spine
+    400094: Devil1_Spine1
+    400096: Head
+    400098: Hips
+    400100: LeftArm
+    400102: LeftFoot
+    400104: LeftForeArm
+    400106: LeftHand
+    400108: LeftLeg
+    400110: LeftShoulder
+    400112: LeftToeBase
+    400114: LeftUpLeg
+    400116: Neck
+    400118: QuickRigCharacter_Guides
+    400120: Reference
+    400122: RightArm
+    400124: RightFoot
+    400126: RightForeArm
+    400128: RightHand
+    400130: RightLeg
+    400132: RightShoulder
+    400134: RightToeBase
+    400136: RightUpLeg
+    400138: Spine
+    400140: Spine1
+    400142: transform1
+    400144: transform10
+    400146: transform11
+    400148: transform12
+    400150: transform12 1
+    400152: transform13
+    400154: transform13 1
+    400156: transform14
+    400158: transform15
+    400160: transform16
+    400162: transform17
+    400164: transform18
+    400166: transform19
+    400168: transform2
+    400170: transform2 1
+    400172: transform20
+    400174: transform21
+    400176: transform22
+    400178: transform23
+    400180: transform3
+    400182: transform3 1
+    400184: transform4
+    400186: transform5
+    400188: transform6
+    400190: transform7
+    400192: transform8
+    400194: transform9
+    4300000: Devil
+    7400000: Idle
+    7400002: Walk
+    7400004: Run
+    7400006: Attack
+    7400008: Death
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: Devil
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Idle
+      takeName: Idle
+      firstFrame: 132
+      lastFrame: 190
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Walk
+      takeName: Walk
+      firstFrame: 191
+      lastFrame: 250
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 1
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Run
+      takeName: Run
+      firstFrame: 251
+      lastFrame: 279
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 1
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Attack
+      takeName: Attack
+      firstFrame: 2
+      lastFrame: 54
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 1
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Death
+      takeName: Death
+      firstFrame: 54
+      lastFrame: 131
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 2
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
