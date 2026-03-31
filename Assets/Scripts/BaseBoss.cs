@@ -11,10 +11,15 @@ public class BaseBoss : MonoBehaviour
     public GameObject playerObj;
     protected float currentHealth;
     public bool isAnger;
-    public float damage;
+    public float damage = 10;
+    [Header("Animation/Speed")]
     protected Animator animator;
     public float normalSpeed = 1.0f;
     public float enragedSpeed = 1.5f;
+    [Header("DistanceBetweenPlayer")]
+    public Vector3 enemyLocation;
+    public Vector3 playerTarget;
+    public float distanceToPlayer;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -29,7 +34,13 @@ public class BaseBoss : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Vector3 direction = (playerObj.transform.position - transform.position).normalized;
+        Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
+        transform.rotation = Quaternion.Lerp(transform.rotation, lookRotation, Time.deltaTime * 12f);
+
+
+        distanceToPlayer = Vector3.Distance(enemyLocation, playerTarget);
+        agent.SetDestination(playerTarget);
     }
 
     public virtual void TakeDamage(float damage)
@@ -42,21 +53,52 @@ public class BaseBoss : MonoBehaviour
 
         if (currentHealth <= 50 && currentHealth > 1)
         {
-            Debug.Log("Stage 2");
+            Stage2();
         }
     }
 
     public virtual void Death()
     {
-        Debug.Log("Death");
+        Debug.Log("BaseBosee Death");
     }
 
     public virtual void SpeicalAttack()
     {
-        Vector3 enemyLocation = transform.position;
-        Vector3 playerTarget = playerObj.transform.position;
+        Debug.Log("BaseBoss Speical");
 
-        float distanceToPlayer = Vector3.Distance(enemyLocation, playerTarget);
+    }
+
+    public virtual void RangeAttack()
+    {
+        Debug.Log("BaseBoss Range");
+    }
+
+    public virtual void BaseAttack()
+    {
+        Debug.Log("BaseBoss BaseAttack");
+    }
+
+    public virtual void Attack()
+    {
+        float timer = 0;
+        timer += Time.deltaTime;
+        if (distanceToPlayer < 1.3f)
+        {
+            BaseAttack();
+        }
+        else if(distanceToPlayer < 3f && timer > 3)
+        {
+            RangeAttack();
+        }
+        else if(distanceToPlayer < 2f && timer > 5)
+        {
+            SpeicalAttack();
+        }
+    }
+
+    public virtual void Stage2()
+    {
+        Debug.Log("BaseBosee Stage2");
     }
   
 }
