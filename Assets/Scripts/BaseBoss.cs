@@ -9,7 +9,7 @@ public class BaseBoss : MonoBehaviour
     public NavMeshAgent agent;
     public float maxHealth = 100;
     public GameObject playerObj;
-    protected float currentHealth;
+    public float currentHealth;
     public bool isAnger;
     public float damage = 10;
     [Header("Animation/Speed")]
@@ -22,22 +22,24 @@ public class BaseBoss : MonoBehaviour
     public float distanceToPlayer;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    protected virtual void Start()
     {
         playerObj = GameObject.FindWithTag("Player");
+        agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
         animator.speed = normalSpeed;
-
-
+        currentHealth = maxHealth;
     }
 
     // Update is called once per frame
-    void Update()
+    protected virtual void Update()
     {
-        Vector3 direction = (playerObj.transform.position - transform.position).normalized;
+        enemyLocation = transform.position;
+        playerTarget = playerObj.transform.position;
+
+        Vector3 direction = (playerTarget - enemyLocation).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
         transform.rotation = Quaternion.Lerp(transform.rotation, lookRotation, Time.deltaTime * 12f);
-
 
         distanceToPlayer = Vector3.Distance(enemyLocation, playerTarget);
         agent.SetDestination(playerTarget);
