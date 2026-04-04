@@ -632,7 +632,55 @@ ModelImporter:
     removeConstantScaleCurves: 0
     motionNodeName: 
     animationImportErrors: 
-    animationImportWarnings: 
+    animationImportWarnings: "\nClip 'Idle' has import animation warnings that might
+      lower retargeting quality:\nNote: Activate translation DOF on avatar to improve
+      retargeting quality.\n\t'Devil1_Spine1' is inbetween humanoid transforms and
+      has rotation animation that will be discarded.\n\t'Devil1_LeftForeArm' has
+      translation animation that will be discarded.\n\t'Devil1_RightForeArm' has
+      translation animation that will be discarded.\n\t'Devil1_RightHand11' has translation
+      animation that will be discarded.\n\t'Devil1_RightHand12' has translation animation
+      that will be discarded.\n\t'Devil1_RightHand17' has translation animation that
+      will be discarded.\n\t'Devil1_RightHand14' has translation animation that will
+      be discarded.\n\t'Devil1_RightHand15' has translation animation that will be
+      discarded.\n\t'Devil1_Neck' is inbetween humanoid transforms and has rotation
+      animation that will be discarded.\n\nClip 'Walk' has import animation warnings
+      that might lower retargeting quality:\nNote: Activate translation DOF on avatar
+      to improve retargeting quality.\n\t'Devil1_LeftLeg' has translation animation
+      that will be discarded.\n\t'Devil1_RightLeg' has translation animation that
+      will be discarded.\n\t'Devil1_RightHand11' has translation animation that will
+      be discarded.\n\t'Devil1_RightHand12' has translation animation that will be
+      discarded.\n\t'Devil1_RightHand17' has translation animation that will be discarded.\n\t'Devil1_RightHand14'
+      has translation animation that will be discarded.\n\t'Devil1_RightHand15' has
+      translation animation that will be discarded.\n\t'Devil1_Neck' is inbetween
+      humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'Run' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'Devil1_LeftLeg'
+      has translation animation that will be discarded.\n\t'Devil1_RightLeg' has
+      translation animation that will be discarded.\n\t'Devil1_Spine1' is inbetween
+      humanoid transforms and has rotation animation that will be discarded.\n\t'Devil1_LeftForeArm'
+      has translation animation that will be discarded.\n\t'Devil1_RightForeArm'
+      has translation animation that will be discarded.\n\t'Devil1_Neck' is inbetween
+      humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'Attack' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'Devil1_LeftLeg'
+      has translation animation that will be discarded.\n\t'Devil1_RightLeg' has
+      translation animation that will be discarded.\n\t'Devil1_Spine1' is inbetween
+      humanoid transforms and has rotation animation that will be discarded.\n\t'Devil1_LeftForeArm'
+      has translation animation that will be discarded.\n\t'Devil1_RightForeArm'
+      has translation animation that will be discarded.\n\t'Devil1_Neck' is inbetween
+      humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'Death' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'Devil1_LeftLeg'
+      has translation animation that will be discarded.\n\t'Devil1_Spine1' is inbetween
+      humanoid transforms and has rotation animation that will be discarded.\n\t'Devil1_LeftForeArm'
+      has translation animation that will be discarded.\n\t'Devil1_RightForeArm'
+      has translation animation that will be discarded.\n\t'Devil1_RightHand11' has
+      translation animation that will be discarded.\n\t'Devil1_RightHand12' has translation
+      animation that will be discarded.\n\t'Devil1_RightHand17' has translation animation
+      that will be discarded.\n\t'Devil1_RightHand14' has translation animation that
+      will be discarded.\n\t'Devil1_RightHand15' has translation animation that will
+      be discarded.\n\t'Devil1_Neck' is inbetween humanoid transforms and has rotation
+      animation that will be discarded.\n"
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
@@ -843,7 +891,442 @@ ModelImporter:
   humanDescription:
     serializedVersion: 3
     human: []
-    skeleton: []
+    skeleton:
+    - name: DemonBoss(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Devil
+      parentName: DemonBoss(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: QuickRigCharacter_Guides
+      parentName: DemonBoss(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Head
+      parentName: QuickRigCharacter_Guides
+      position: {x: 0.011714783, y: 5.0845203, z: 0.9199081}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Hips
+      parentName: QuickRigCharacter_Guides
+      position: {x: -0, y: 2.8364544, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LeftArm
+      parentName: QuickRigCharacter_Guides
+      position: {x: -1.6020416, y: 5.377102, z: -0.22334258}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LeftFoot
+      parentName: QuickRigCharacter_Guides
+      position: {x: -0.5707751, y: 0.30584314, z: -0.053167377}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LeftForeArm
+      parentName: QuickRigCharacter_Guides
+      position: {x: -3.0367424, y: 5.4992237, z: -0.28160125}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LeftHand
+      parentName: QuickRigCharacter_Guides
+      position: {x: -4.3281417, y: 5.459298, z: -0.2700016}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LeftLeg
+      parentName: QuickRigCharacter_Guides
+      position: {x: -0.5449577, y: 1.5738401, z: 0.24201602}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LeftShoulder
+      parentName: QuickRigCharacter_Guides
+      position: {x: -0.9876549, y: 5.377102, z: -0.22334258}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LeftToeBase
+      parentName: QuickRigCharacter_Guides
+      position: {x: -0.7917708, y: 0.21558355, z: 0.57360744}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LeftUpLeg
+      parentName: QuickRigCharacter_Guides
+      position: {x: -0.5563941, y: 2.7225256, z: -0.08534241}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Neck
+      parentName: QuickRigCharacter_Guides
+      position: {x: 0.011714783, y: 5.0845203, z: 0.4515054}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Reference
+      parentName: QuickRigCharacter_Guides
+      position: {x: 0.011714783, y: -0.06205809, z: 0.05727127}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RightArm
+      parentName: QuickRigCharacter_Guides
+      position: {x: 1.6020416, y: 5.377102, z: -0.22334258}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RightFoot
+      parentName: QuickRigCharacter_Guides
+      position: {x: 0.5707751, y: 0.30584314, z: -0.053167377}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RightForeArm
+      parentName: QuickRigCharacter_Guides
+      position: {x: 3.0367424, y: 5.4992237, z: -0.28160125}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RightHand
+      parentName: QuickRigCharacter_Guides
+      position: {x: 4.3281417, y: 5.459298, z: -0.2700016}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RightLeg
+      parentName: QuickRigCharacter_Guides
+      position: {x: 0.5449577, y: 1.5738401, z: 0.24201602}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RightShoulder
+      parentName: QuickRigCharacter_Guides
+      position: {x: 0.9876549, y: 5.377102, z: -0.22334258}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RightToeBase
+      parentName: QuickRigCharacter_Guides
+      position: {x: 0.7917708, y: 0.21558355, z: 0.57360744}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RightUpLeg
+      parentName: QuickRigCharacter_Guides
+      position: {x: 0.5563941, y: 2.7225256, z: -0.08534241}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Spine
+      parentName: QuickRigCharacter_Guides
+      position: {x: -0, y: 3.3505223, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Spine1
+      parentName: QuickRigCharacter_Guides
+      position: {x: -0, y: 3.9983075, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Devil1_Reference
+      parentName: DemonBoss(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Devil1_Hips
+      parentName: Devil1_Reference
+      position: {x: -0.0076232003, y: 2.60281, z: -0.013842187}
+      rotation: {x: -0.5178247, y: 0.45086515, z: 0.5414955, w: -0.48514}
+      scale: {x: 1, y: 0.9999999, z: 1}
+    - name: Devil1_LeftUpLeg
+      parentName: Devil1_Hips
+      position: {x: 0.11392888, y: -0.08534248, z: 0.5563941}
+      rotation: {x: -0.05656129, y: 0.045837432, z: 0.9825281, w: -0.17128438}
+      scale: {x: 1, y: 0.99999994, z: 1.0000001}
+    - name: Devil1_LeftLeg
+      parentName: Devil1_LeftUpLeg
+      position: {x: -1.1944761, y: 0.000018429111, z: 0.0000051509755}
+      rotation: {x: -0.038816806, y: -0.017400471, z: -0.3251599, w: 0.9447018}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1}
+    - name: Devil1_LeftFoot
+      parentName: Devil1_LeftLeg
+      position: {x: -1.3021584, y: 0.00000026409614, z: -0.00000014755973}
+      rotation: {x: -0.064974785, y: -0.0048237727, z: 0.80251145, w: 0.5930687}
+      scale: {x: 1, y: 1, z: 1.0000001}
+    - name: Devil1_LeftToeBase
+      parentName: Devil1_LeftFoot
+      position: {x: -0.67069656, y: 0.000000015481682, z: 0.00000039774804}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1.0000001, y: 1, z: 1.0000001}
+    - name: Devil1_RightUpLeg
+      parentName: Devil1_Hips
+      position: {x: 0.1139288, y: -0.08534239, z: -0.55639434}
+      rotation: {x: 0.048523754, y: 0.04663326, z: 0.16934782, w: 0.9832559}
+      scale: {x: 1, y: 1, z: 1.0000001}
+    - name: Devil1_RightLeg
+      parentName: Devil1_RightUpLeg
+      position: {x: 1.1944768, y: -0.000004913751, z: -0.0000026299554}
+      rotation: {x: 0.0157035, y: -0.03834128, z: -0.3188907, w: 0.9468855}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Devil1_RightFoot
+      parentName: Devil1_RightLeg
+      position: {x: 1.3021591, y: -0.00000074028077, z: 0.00000014034424}
+      rotation: {x: -0.033325337, y: -0.00007997823, z: 0.805333, w: 0.5918853}
+      scale: {x: 0.99999994, y: 0.9999999, z: 0.99999994}
+    - name: Devil1_RightToeBase
+      parentName: Devil1_RightFoot
+      position: {x: 0.67069566, y: 0.000000004665911, z: -0.00000022636533}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.99999994, y: 0.9999999, z: 0.99999994}
+    - name: Devil1_Spine
+      parentName: Devil1_Hips
+      position: {x: -0.514068, y: 0.00000005785478, z: 0.0000000043120654}
+      rotation: {x: -0.0123565495, y: 0.015489444, z: 0.15686846, w: 0.98742074}
+      scale: {x: 1, y: 1.0000001, z: 1.0000001}
+    - name: Devil1_Spine1
+      parentName: Devil1_Spine
+      position: {x: -0.6477853, y: -0.00000009425728, z: -0.000000116862516}
+      rotation: {x: -0.07194707, y: -0.019863715, z: -0.33222052, w: 0.9402439}
+      scale: {x: 1, y: 1, z: 1.0000001}
+    - name: Devil1_Neck
+      parentName: Devil1_Spine1
+      position: {x: -1.1763812, y: 0.000000097459996, z: -0.0000009823368}
+      rotation: {x: 0.00009747467, y: 0.041882478, z: -0.49941114, w: 0.86535215}
+      scale: {x: 1.0000001, y: 0.99999994, z: 1.0000001}
+    - name: Devil1_Head
+      parentName: Devil1_Neck
+      position: {x: -0.4684047, y: -0.00000039253166, z: -0.00000016955875}
+      rotation: {x: -0.01323813, y: 0.035487566, z: 0.00591623, w: 0.99926496}
+      scale: {x: 1.0000001, y: 1, z: 1.0000001}
+    - name: Devil1_LeftShoulder
+      parentName: Devil1_Spine1
+      position: {x: -1.1775635, y: -0.73545825, z: 0.9994311}
+      rotation: {x: -0.44077095, y: 0.35156065, z: 0.7384548, w: 0.3698791}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Devil1_LeftArm
+      parentName: Devil1_LeftShoulder
+      position: {x: -0.6143868, y: 0.0000000030539917, z: -0.000000025909548}
+      rotation: {x: 0.7404679, y: 0.0005521327, z: -0.15392154, w: 0.6542287}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1}
+    - name: Devil1_LeftForeArm
+      parentName: Devil1_LeftArm
+      position: {x: -1.4410689, y: 0.000001250177, z: -0.000006004712}
+      rotation: {x: -0.0032946165, y: -0.0059066857, z: 0.009240569, w: 0.99993443}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
+    - name: Devil1_LeftHand
+      parentName: Devil1_LeftForeArm
+      position: {x: -1.2920681, y: 0.000000078935564, z: -0.0000000037109344}
+      rotation: {x: 0.027788106, y: -0, z: -0, w: 0.9996138}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
+    - name: Devil1_LeftHand1
+      parentName: Devil1_LeftHand
+      position: {x: -1.2222451, y: -0.0449807, z: -0.20691057}
+      rotation: {x: 0.0845953, y: 0.98859614, z: 0.10715329, w: 0.06355659}
+      scale: {x: 1, y: 1, z: 1}
+    - name: transform5
+      parentName: Devil1_LeftHand1
+      position: {x: 2.6244836, y: 0.044980705, z: 0.20690997}
+      rotation: {x: 0.0000024363399, y: 0.9771573, z: -0.21246178, w: 0.0048718527}
+      scale: {x: 1.0000002, y: 1.0000001, z: 1.0000001}
+    - name: Devil1_LeftHand2
+      parentName: transform5
+      position: {x: -2.9873347, y: -0.0449807, z: -0.20690995}
+      rotation: {x: -0.014983461, y: 0.9998872, z: -0.0010378112, w: 0.00000019185246}
+      scale: {x: 1, y: 1, z: 1}
+    - name: transform4
+      parentName: Devil1_LeftHand2
+      position: {x: 2.9873357, y: 0.044980705, z: 0.20690997}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1.0000002, y: 1.0000001, z: 1.0000001}
+    - name: Devil1_LeftHand3
+      parentName: transform4
+      position: {x: -3.4184499, y: -0.0449807, z: -0.16009109}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Devil1_LeftHand9
+      parentName: Devil1_LeftHand
+      position: {x: -1.2222451, y: -0.37572894, z: -0.09202364}
+      rotation: {x: 0.027164273, y: 0.9908029, z: 0.084620334, w: 0.10203505}
+      scale: {x: 1, y: 1, z: 1}
+    - name: transform7
+      parentName: Devil1_LeftHand9
+      position: {x: 2.6244836, y: 0.375729, z: 0.09202304}
+      rotation: {x: -0.0000014444811, y: 0.23788357, z: -0.971254, w: 0.008782833}
+      scale: {x: 1.0000002, y: 1.0000001, z: 1.0000001}
+    - name: Devil1_LeftHand8
+      parentName: transform7
+      position: {x: -2.9873347, y: -0.37572894, z: -0.09202303}
+      rotation: {x: -0.12467345, y: 0.9921904, z: -0.0038409138, w: -0.0000000037252894}
+      scale: {x: 1, y: 1, z: 1}
+    - name: transform6
+      parentName: Devil1_LeftHand8
+      position: {x: 2.9873357, y: 0.375729, z: 0.09202304}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1.0000002, y: 1.0000001, z: 1.0000001}
+    - name: Devil1_LeftHand7
+      parentName: transform6
+      position: {x: -3.4184499, y: -0.37572894, z: -0.045204166}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Devil1_LeftHand6
+      parentName: Devil1_LeftHand
+      position: {x: -1.2222451, y: 0.2683025, z: -0.10068561}
+      rotation: {x: 0.14560318, y: 0.9849415, z: 0.05663842, w: 0.07404158}
+      scale: {x: 1, y: 1, z: 1}
+    - name: transform3 1
+      parentName: Devil1_LeftHand6
+      position: {x: 2.6244836, y: -0.26830253, z: 0.10068502}
+      rotation: {x: 0.0000004656613, y: 0.35134086, z: 0.9362247, w: 0.0065621575}
+      scale: {x: 1.0000002, y: 1.0000001, z: 1.0000001}
+    - name: Devil1_LeftHand5 1
+      parentName: transform3 1
+      position: {x: -2.9873347, y: 0.2683025, z: -0.100685}
+      rotation: {x: 0.078591354, y: 0.96659756, z: 0.24395189, w: 0.00000008568165}
+      scale: {x: 1, y: 1, z: 1}
+    - name: transform2 1
+      parentName: Devil1_LeftHand5 1
+      position: {x: 2.9873357, y: -0.26830253, z: 0.10068502}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1.0000002, y: 1.0000001, z: 1.0000001}
+    - name: Devil1_LeftHand4 1
+      parentName: transform2 1
+      position: {x: -3.4184499, y: 0.2683025, z: -0.053866148}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Devil1_LeftHand10
+      parentName: Devil1_LeftHand
+      position: {x: -0.26583844, y: 0.3825485, z: 0.15040797}
+      rotation: {x: 0.15783301, y: 0.98594815, z: -0.040836226, w: 0.036432613}
+      scale: {x: 1, y: 1, z: 1}
+    - name: transform3
+      parentName: Devil1_LeftHand10
+      position: {x: 2.6244836, y: -0.26830253, z: 0.10068502}
+      rotation: {x: 0.0000009685751, y: 0.3513436, z: 0.93622357, w: 0.0065622157}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Devil1_LeftHand5
+      parentName: transform3
+      position: {x: -2.9873357, y: 0.26830253, z: -0.10068502}
+      rotation: {x: -0.033391815, y: 0.0029993057, z: 0.9994376, w: 0.0008095056}
+      scale: {x: 1, y: 1, z: 1}
+    - name: transform2
+      parentName: Devil1_LeftHand5
+      position: {x: 2.9873357, y: -0.26830253, z: 0.10068502}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Devil1_LeftHand4
+      parentName: transform2
+      position: {x: -3.4184508, y: 0.26830253, z: -0.053866155}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Devil1_RightShoulder
+      parentName: Devil1_Spine1
+      position: {x: -1.1972346, y: -0.7354585, z: -0.9757809}
+      rotation: {x: 0.23932458, y: 0.64021754, z: 0.020803634, w: 0.72966605}
+      scale: {x: 1.0000002, y: 1, z: 1}
+    - name: Devil1_RightArm
+      parentName: Devil1_RightShoulder
+      position: {x: 0.61438674, y: 0.00000030977816, z: 0.00000023173432}
+      rotation: {x: 0.88907707, y: -0.0508606, z: -0.0988059, w: 0.44406375}
+      scale: {x: 1, y: 0.9999999, z: 1}
+    - name: Devil1_RightForeArm
+      parentName: Devil1_RightArm
+      position: {x: 1.4410679, y: -0.00000016198392, z: 0.00000006204845}
+      rotation: {x: -0.0126718255, y: -0.03482632, z: -0.033130027, w: 0.99876374}
+      scale: {x: 1.0000001, y: 1, z: 1.0000001}
+    - name: Devil1_RightHand
+      parentName: Devil1_RightForeArm
+      position: {x: 1.2920679, y: -0.0000004898484, z: -0.00000006546043}
+      rotation: {x: 0.0000005397014, y: -0, z: -0, w: 1}
+      scale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
+    - name: Devil1_RightHand11
+      parentName: Devil1_RightHand
+      position: {x: 1.1003617, y: 0.054493878, z: 0.25097352}
+      rotation: {x: 0.06453869, y: 0.93790257, z: 0.32872182, w: 0.09008668}
+      scale: {x: 1, y: 1, z: 1}
+    - name: transform8
+      parentName: Devil1_RightHand11
+      position: {x: -2.6244996, y: -0.044979997, z: -0.20691998}
+      rotation: {x: -0.035753224, y: 0.9688957, z: 0.24286544, w: 0.031292345}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Devil1_RightHand12
+      parentName: transform8
+      position: {x: 2.8332007, y: 0.0917901, z: 0.05089694}
+      rotation: {x: -0.023195995, y: 0.999459, z: -0.009681374, w: -0.021210218}
+      scale: {x: 1, y: 1, z: 1}
+    - name: transform9
+      parentName: Devil1_RightHand12
+      position: {x: -2.987339, y: -0.044979997, z: -0.20691998}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Devil1_RightHand13
+      parentName: transform9
+      position: {x: 3.32518, y: 0.035485853, z: 0.14498252}
+      rotation: {x: 0, y: 0.52263343, z: -0, w: 0.8525575}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Devil1_RightHand17
+      parentName: Devil1_RightHand
+      position: {x: 1.106555, y: -0.2579226, z: 0.14238559}
+      rotation: {x: 0.14977595, y: 0.9803362, z: 0.08822744, w: 0.09340238}
+      scale: {x: 1, y: 1, z: 1}
+    - name: transform12
+      parentName: Devil1_RightHand17
+      position: {x: -2.6244996, y: 0.26830396, z: -0.10067999}
+      rotation: {x: 0.07879562, y: 0.91703665, z: 0.38980216, w: 0.029821739}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Devil1_RightHand18
+      parentName: transform12
+      position: {x: 2.8406255, y: -0.22374876, z: -0.047827233}
+      rotation: {x: 0.08402244, y: 0.99611914, z: -0.007458915, w: -0.025125427}
+      scale: {x: 1, y: 1, z: 1}
+    - name: transform13
+      parentName: Devil1_RightHand18
+      position: {x: -2.987339, y: 0.26830396, z: -0.10067999}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Devil1_RightHand19
+      parentName: transform13
+      position: {x: 3.3383195, y: -0.27779812, z: 0.003787794}
+      rotation: {x: 0, y: 0.52263343, z: -0, w: 0.8525575}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Devil1_RightHand20
+      parentName: Devil1_RightHand
+      position: {x: 0.29643345, y: -0.24852827, z: -0.20672159}
+      rotation: {x: 0.14089191, y: 0.9495342, z: 0.266873, w: 0.085516915}
+      scale: {x: 1, y: 1, z: 1}
+    - name: transform12 1
+      parentName: Devil1_RightHand20
+      position: {x: -2.6244996, y: 0.26830396, z: -0.10067999}
+      rotation: {x: 0.000002488493, y: 0.3513412, z: 0.93622446, w: 0.006562104}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Devil1_RightHand18 1
+      parentName: transform12 1
+      position: {x: 2.9873395, y: -0.26830396, z: 0.10067999}
+      rotation: {x: 0.012844945, y: 0.47349906, z: 0.8807007, w: -0.000000055413693}
+      scale: {x: 1, y: 1, z: 1}
+    - name: transform13 1
+      parentName: Devil1_RightHand18 1
+      position: {x: -2.987339, y: 0.26830396, z: -0.10067999}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Devil1_RightHand19 1
+      parentName: transform13 1
+      position: {x: 3.4184592, y: -0.26830396, z: 0.053860005}
+      rotation: {x: 0.10685606, y: 0.06127908, z: 0.14126368, w: 0.9822786}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Devil1_RightHand14
+      parentName: Devil1_RightHand
+      position: {x: 1.1012766, y: 0.3861354, z: 0.13868196}
+      rotation: {x: 0.023869928, y: 0.9717332, z: 0.19640699, w: 0.12879841}
+      scale: {x: 1, y: 1, z: 1}
+    - name: transform10
+      parentName: Devil1_RightHand14
+      position: {x: -2.6244996, y: -0.37572813, z: -0.09202}
+      rotation: {x: -0.14442258, y: 0.98382914, z: 0.10198431, w: 0.028662454}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Devil1_RightHand15
+      parentName: transform10
+      position: {x: 2.8332007, y: 0.42253825, z: -0.06400306}
+      rotation: {x: -0.13602483, y: 0.99021614, z: -0.016744453, w: -0.026249297}
+      scale: {x: 1, y: 1, z: 1}
+    - name: transform11
+      parentName: Devil1_RightHand15
+      position: {x: -2.987339, y: -0.37572813, z: -0.09202}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Devil1_RightHand16
+      parentName: transform11
+      position: {x: 3.3342638, y: 0.3657535, z: -0.0074063204}
+      rotation: {x: 0, y: 0.5461562, z: -0, w: 0.8376834}
+      scale: {x: 1, y: 1, z: 1}
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5
@@ -858,7 +1341,7 @@ ModelImporter:
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   autoGenerateAvatarMappingIfUnspecified: 1
-  animationType: 3
+  animationType: 2
   humanoidOversampling: 1
   avatarSetup: 1
   addHumanoidExtraRootOnlyWhenUsingAvatar: 0

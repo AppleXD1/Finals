@@ -12,6 +12,7 @@ public class BaseBoss : MonoBehaviour
     public float currentHealth;
     public bool isAnger;
     public float damage = 10;
+    public float timer = 0;
     [Header("Animation/Speed")]
     protected Animator animator;
     public float normalSpeed = 1.0f;
@@ -20,6 +21,10 @@ public class BaseBoss : MonoBehaviour
     public Vector3 enemyLocation;
     public Vector3 playerTarget;
     public float distanceToPlayer;
+    [Header("Attacks Bools")]
+    public bool isAttacking;
+    public bool speicalAttack;
+    public bool rangeAttack;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     protected virtual void Start()
@@ -82,18 +87,21 @@ public class BaseBoss : MonoBehaviour
 
     public virtual void Attack()
     {
-        float timer = 0;
+        
         timer += Time.deltaTime;
-        if (distanceToPlayer < 1.3f)
+        if (distanceToPlayer < 1.3f && !isAttacking)
         {
+            isAttacking = true;
             BaseAttack();
         }
-        else if(distanceToPlayer < 3f && timer > 3)
+        if(distanceToPlayer > 3f && timer > 3 && !rangeAttack)
         {
+            rangeAttack = true;
             RangeAttack();
         }
-        else if(distanceToPlayer < 2f && timer > 5)
+        if(distanceToPlayer < 2f && timer > 5 && !isAttacking && !rangeAttack && !speicalAttack)
         {
+            speicalAttack = true;
             SpeicalAttack();
         }
     }
