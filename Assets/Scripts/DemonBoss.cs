@@ -17,7 +17,7 @@ public class DemonBoss : BaseBoss
     {
         base.Update();
         base.Attack();
-        if (!isAttacking)
+        if (!isAttacking && !rangeAttack && !speicalAttack)
         {
             animator.SetBool("isMoving", agent.velocity.sqrMagnitude > 0.1f);
         }
@@ -27,13 +27,19 @@ public class DemonBoss : BaseBoss
     public override void BaseAttack()
     {
         base.BaseAttack();
+        if (isAttacking) return;
+
+        isAttacking = true;
         StartCoroutine(BaseAttackWait());
-        
+
     }
 
     public override void RangeAttack()
     {
         base.RangeAttack();
+        if (isAttacking) return;
+
+        isAttacking = true;
         StartCoroutine(RangeAttackWait());
     }
 
@@ -47,6 +53,11 @@ public class DemonBoss : BaseBoss
         animator.SetTrigger("BossAttack");
 
         // small delay so animator can switch into attack state
+        while(distanceToPlayer < 1.3f)
+        {
+            timer = 0f;
+            break;
+        }
         yield return null;
 
         AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
@@ -61,7 +72,6 @@ public class DemonBoss : BaseBoss
     IEnumerator RangeAttackWait()
     {
         agent.isStopped = true;
-        timer = 0;
         agent.velocity = Vector3.zero;
 
         animator.SetBool("isMoving", false);
@@ -70,12 +80,18 @@ public class DemonBoss : BaseBoss
 
         yield return null;
 
-        AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
-        float length = stateInfo.length;
+        while (!animator.GetCurrentAnimatorStateInfo(0).IsName("Throwing"))
+        {
+            yield return null;
+        }
 
-        
-        rangeAttack = false;
-        agent.isStopped=false;
+        float length = animator.GetCurrentAnimatorStateInfo(0).length;
+        yield return new WaitForSeconds(length);
+
+        nextRangeTime = Time.time + rangeCooldown;
+
+        isAttacking = false;
+        agent.isStopped = false;
 
     }
 }

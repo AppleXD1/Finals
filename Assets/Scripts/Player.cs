@@ -11,6 +11,8 @@ public class Player : MonoBehaviour
     public Rigidbody rb;
     public Animator animator;
 
+    public float Health;
+
     private Vector2 moveInput;
 
     void Start()
@@ -18,7 +20,7 @@ public class Player : MonoBehaviour
         playerInput = GetComponent<PlayerInput>();
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
-
+        Health = 100;
         if (playerInput != null)
             moveAction = playerInput.actions.FindAction("Move");
     }

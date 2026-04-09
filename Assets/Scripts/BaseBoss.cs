@@ -9,6 +9,7 @@ public class BaseBoss : MonoBehaviour
     public NavMeshAgent agent;
     public float maxHealth = 100;
     public GameObject playerObj;
+    public Transform projectileSpawnPoint;
     public float currentHealth;
     public bool isAnger;
     public float damage = 10;
@@ -25,6 +26,15 @@ public class BaseBoss : MonoBehaviour
     public bool isAttacking;
     public bool speicalAttack;
     public bool rangeAttack;
+    [Header("Cooldowns")]
+    public float rangeCooldown = 5f;
+    public float specialCooldown = 8f;
+    protected float nextRangeTime;
+    protected float nextSpecialTime;
+    [Header("Range Attack")]
+    public GameObject projectilePrefab;
+    public float projectileSpeed = 24f;
+    
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     protected virtual void Start()
@@ -87,28 +97,43 @@ public class BaseBoss : MonoBehaviour
 
     public virtual void Attack()
     {
-        
-        timer += Time.deltaTime;
-        if (distanceToPlayer < 1.3f && !isAttacking)
+
+
+        if (distanceToPlayer < 1.3f)
         {
-            isAttacking = true;
+
             BaseAttack();
+            return;
         }
-        if(distanceToPlayer > 3f && timer > 3 && !rangeAttack)
+
+        if (distanceToPlayer > 3f && Time.time >= nextRangeTime)
         {
-            rangeAttack = true;
             RangeAttack();
+            return;
         }
-        if(distanceToPlayer < 2f && timer > 5 && !isAttacking && !rangeAttack && !speicalAttack)
-        {
-            speicalAttack = true;
-            SpeicalAttack();
-        }
+
     }
 
     public virtual void Stage2()
     {
         Debug.Log("BaseBosee Stage2");
     }
-  
+
+    public virtual void SpawnProjectile()
+    {
+        if (projectilePrefab == null || projectileSpawnPoint == null || playerObj.transform == null) return;
+
+        GameObject proj = Instantiate(projectilePrefab, projectileSpawnPoint.position, Quaternion.identity);
+
+        Vector3 dir = (playerObj.transform.position - projectileSpawnPoint.position).normalized;
+
+        Rigidbody rb = proj.GetComponent<Rigidbody>();
+        if (rb != null)
+        {
+            rb.linearVelocity = dir * projectileSpeed;
+        }
+
+        proj.transform.forward = dir;
+    }
+
 }
