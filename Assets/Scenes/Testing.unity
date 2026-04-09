@@ -1339,7 +1339,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1932644852}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6a8451e3fbb2890489d73bb4a9368b44, type: 3}
   m_Name: 
@@ -1520,9 +1520,11 @@ MonoBehaviour:
   playerInput: {fileID: 2145980322}
   cameraTransform: {fileID: 1186786511}
   moveSpeed: 6
+  canDash: 0
   rb: {fileID: 2145980323}
   animator: {fileID: 2145980324}
   Health: 0
+  Stamina: 0
 --- !u!65 &2145980326
 BoxCollider:
   m_ObjectHideFlags: 0
