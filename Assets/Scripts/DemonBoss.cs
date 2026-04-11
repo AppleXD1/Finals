@@ -43,6 +43,14 @@ public class DemonBoss : BaseBoss
         StartCoroutine(RangeAttackWait());
     }
 
+    public override void SpeicalAttack()
+    {
+        base.SpeicalAttack();
+        if(isAttacking) return;
+        isAttacking = true;
+        StartCoroutine(BossSpeicalWait());
+    }
+
     IEnumerator BaseAttackWait()
     {
         agent.isStopped = true;
@@ -93,5 +101,30 @@ public class DemonBoss : BaseBoss
         isAttacking = false;
         agent.isStopped = false;
 
+    }
+
+    IEnumerator BossSpeicalWait()
+    {
+        agent.isStopped = true;
+        agent.velocity = Vector3.zero;
+
+        animator.SetBool("isMoving", false);
+        animator.ResetTrigger("BossSpeical");
+        animator.SetTrigger("BossSpeical");
+
+        yield return null;
+
+        while (!animator.GetCurrentAnimatorStateInfo(0).IsName("DownSlamDemon"))
+        {
+            yield return null;
+        }
+
+        float length = animator.GetCurrentAnimatorStateInfo(0).length;
+        yield return new WaitForSeconds(length);
+
+        nextSpecialTime = Time.time + specialCooldown;
+
+        isAttacking = false;
+        agent.isStopped = false;
     }
 }

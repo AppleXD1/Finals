@@ -112,8 +112,13 @@ public class BaseBoss : MonoBehaviour
             return;
         }
 
-    }
+        if (distanceToPlayer > 1.3f && Time.time >= nextSpecialTime)
+        {
+            SpeicalAttack();
+            return;
+        }
 
+    } 
     public virtual void Stage2()
     {
         Debug.Log("BaseBosee Stage2");
