@@ -49,12 +49,9 @@ public class Player : MonoBehaviour
     void FixedUpdate()
     {
         MovePlayer();
-        if (dashAction.triggered && Stamina > 10 && canDash)
+        if (Input.GetKey(KeyCode.LeftShift) && Stamina > 10 && canDash)
         {
-            if (Mathf.Approximately(moveInput.sqrMagnitude, 1.0f))
-            {
-                Dash();
-            }
+            Dash();
         }
     }
 
@@ -87,6 +84,7 @@ public class Player : MonoBehaviour
     {
         moveSpeed = moveSpeed * 5;
         yield return new WaitForSeconds(0.3f);
+        Stamina = Stamina - 5;
         moveSpeed = 6f;
         canDash = true;
 

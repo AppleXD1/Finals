@@ -81,7 +81,7 @@ public class BaseBoss : MonoBehaviour
 
     public virtual void SpeicalAttack()
     {
-        Debug.Log("BaseBoss Speical");
+        Debug.Log("BaseBosee Speical");
 
     }
 
@@ -99,23 +99,22 @@ public class BaseBoss : MonoBehaviour
     {
 
 
-        if (distanceToPlayer < 1.3f)
+        if (!isAttacking)
         {
-
-            BaseAttack();
-            return;
-        }
-
-        if (distanceToPlayer > 3f && Time.time >= nextRangeTime)
-        {
-            RangeAttack();
-            return;
-        }
-
-        if (distanceToPlayer > 1.3f && Time.time >= nextSpecialTime)
-        {
-            SpeicalAttack();
-            return;
+            if (distanceToPlayer < 1.3f && Time.time >= nextSpecialTime)
+            {
+                SpeicalAttack();
+                nextSpecialTime = Time.time + specialCooldown;
+            }
+            else if (distanceToPlayer > 3f && Time.time >= nextRangeTime)
+            {
+                RangeAttack();
+                nextRangeTime = Time.time + rangeCooldown;
+            }
+            else if (distanceToPlayer < 1.3f)
+            {
+                BaseAttack();
+            }
         }
 
     } 

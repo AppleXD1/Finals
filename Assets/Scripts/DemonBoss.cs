@@ -21,7 +21,7 @@ public class DemonBoss : BaseBoss
         {
             animator.SetBool("isMoving", agent.velocity.sqrMagnitude > 0.1f);
         }
-        Debug.Log(currentHealth);
+        
     }
 
     public override void BaseAttack()
@@ -30,7 +30,7 @@ public class DemonBoss : BaseBoss
         if (isAttacking) return;
 
         isAttacking = true;
-        StartCoroutine(BaseAttackWait());
+       StartCoroutine(BaseAttackWait());
 
     }
 
@@ -45,8 +45,14 @@ public class DemonBoss : BaseBoss
 
     public override void SpeicalAttack()
     {
+        Debug.Log("Special called. isAttacking = " + isAttacking);
+
+        if (isAttacking) return;
+
         base.SpeicalAttack();
-        if(isAttacking) return;
+
+        Debug.Log("demonBoss Speical");
+
         isAttacking = true;
         StartCoroutine(BossSpeicalWait());
     }
@@ -106,7 +112,6 @@ public class DemonBoss : BaseBoss
     {
         agent.isStopped = true;
         agent.velocity = Vector3.zero;
-
         animator.SetBool("isMoving", false);
         animator.ResetTrigger("BossSpeical");
         animator.SetTrigger("BossSpeical");
