@@ -126,7 +126,6 @@ public class BaseBoss : MonoBehaviour
 
     public virtual void SpawnProjectile()
     {
-        if (projectilePrefab == null || projectileSpawnPoint == null || playerObj.transform == null) return;
 
         GameObject proj = Instantiate(projectilePrefab, projectileSpawnPoint.position, Quaternion.identity);
 

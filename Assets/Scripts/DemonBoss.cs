@@ -60,7 +60,6 @@ public class DemonBoss : BaseBoss
         animator.ResetTrigger("BossAttack");
         animator.SetTrigger("BossAttack");
 
-        // small delay so animator can switch into attack state
         while(distanceToPlayer < 1.3f)
         {
             timer = 0f;

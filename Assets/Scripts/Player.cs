@@ -1,17 +1,26 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Collections;
+using System.Diagnostics;
+using Debug = UnityEngine.Debug;
+
 
 public class Player : MonoBehaviour
 {
     public PlayerInput playerInput;
     private InputAction moveAction;
+    private InputAction dashAction;
     public Transform cameraTransform;
 
     public float moveSpeed = 6f;
+    public bool canDash;
     public Rigidbody rb;
     public Animator animator;
 
     public float Health;
+    private float MaxHealth = 100;
+    public float Stamina;
+    private float MaxStamina = 50;
 
     private Vector2 moveInput;
 
@@ -20,26 +29,33 @@ public class Player : MonoBehaviour
         playerInput = GetComponent<PlayerInput>();
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
-        Health = 100;
-        if (playerInput != null)
-            moveAction = playerInput.actions.FindAction("Move");
+        Health = MaxHealth;
+        Stamina = MaxStamina;
+        moveAction = playerInput.actions.FindAction("Move");
+        dashAction = playerInput.actions.FindAction("Dash");
+        canDash = true;
     }
 
 
     void Update()
     {
-        if (moveAction != null)
-        {
             moveInput = moveAction.ReadValue<Vector2>();
-
             animator.SetFloat("MoveX", moveInput.x);
             animator.SetFloat("MoveY", moveInput.y);
-        }
+           
+
     }
 
     void FixedUpdate()
     {
         MovePlayer();
+        if (dashAction.triggered && Stamina > 10 && canDash)
+        {
+            if (Mathf.Approximately(moveInput.sqrMagnitude, 1.0f))
+            {
+                Dash();
+            }
+        }
     }
 
     void MovePlayer()
@@ -58,5 +74,21 @@ public class Player : MonoBehaviour
 
         Vector3 newPosition = rb.position + moveDirection * moveSpeed * Time.fixedDeltaTime;
         rb.MovePosition(newPosition);
+    }
+
+    void Dash()
+    {
+        canDash = false;
+        StartCoroutine(DashWait());
+
+    }
+
+    IEnumerator DashWait()
+    {
+        moveSpeed = moveSpeed * 5;
+        yield return new WaitForSeconds(0.3f);
+        moveSpeed = 6f;
+        canDash = true;
+
     }
 }
