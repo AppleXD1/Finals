@@ -89,4 +89,13 @@ public class Player : MonoBehaviour
         canDash = true;
 
     }
+
+    public void TakenDamage(float damage)
+    {
+        Health -= damage;
+        if(Health < 0 )
+        {
+            Debug.Log("ded");
+        }
+    }
 }

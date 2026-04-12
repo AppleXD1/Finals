@@ -25,15 +25,16 @@ public class BaseBoss : MonoBehaviour
     [Header("Attacks Bools")]
     public bool isAttacking;
     public bool speicalAttack;
-    public bool rangeAttack;
     [Header("Cooldowns")]
-    public float rangeCooldown = 5f;
-    public float specialCooldown = 8f;
+    public float rangeCooldown = 3f;
+    public float specialCooldown = 6f;
     protected float nextRangeTime;
     protected float nextSpecialTime;
     [Header("Range Attack")]
     public GameObject projectilePrefab;
     public float projectileSpeed = 24f;
+    [Header("HitBoxs")]
+    public BoxCollider groundSmashHB;
     
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -42,6 +43,7 @@ public class BaseBoss : MonoBehaviour
         playerObj = GameObject.FindWithTag("Player");
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
+        groundSmashHB = GameObject.FindWithTag("GroundSmashHitBox").GetComponent<BoxCollider>();
         animator.speed = normalSpeed;
         currentHealth = maxHealth;
     }
