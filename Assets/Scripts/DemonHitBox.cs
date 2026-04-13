@@ -1,13 +1,13 @@
 using UnityEngine;
 
-public class DemonPunch : MonoBehaviour
+public class DemonHitBox : MonoBehaviour
 {
     public BaseBoss boss;
     public float damage = 3;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        boss = GetComponent<BaseBoss>();
+        boss = GameObject.FindWithTag("Boss").GetComponent<BaseBoss>();
     }
 
     // Update is called once per frame
@@ -22,6 +22,13 @@ public class DemonPunch : MonoBehaviour
         if(other.gameObject.CompareTag("Player") && boss.isAttacking && !boss.speicalAttack)
         {
             player.TakenDamage(damage);
+            Debug.Log("Punch hit");
+        }
+
+        if(other.gameObject.CompareTag("Player") && boss.isAttacking && boss.speicalAttack)
+        {
+            player.TakenDamage(damage * 2);
+            Debug.Log("Speical hit");
         }
     }
 }

@@ -17,7 +17,7 @@ public class DemonBoss : BaseBoss
     {
         base.Update();
         base.Attack();
-        if (!isAttacking && !rangeAttack && !speicalAttack)
+        if (!isAttacking)
         {
             animator.SetBool("isMoving", agent.velocity.sqrMagnitude > 0.1f);
         }
@@ -45,14 +45,11 @@ public class DemonBoss : BaseBoss
 
     public override void SpeicalAttack()
     {
-        Debug.Log("Special called. isAttacking = " + isAttacking);
 
         if (isAttacking) return;
-
         base.SpeicalAttack();
 
-        Debug.Log("demonBoss Speical");
-
+        speicalAttack = true;
         isAttacking = true;
         StartCoroutine(BossSpeicalWait());
     }
@@ -115,6 +112,7 @@ public class DemonBoss : BaseBoss
         animator.SetBool("isMoving", false);
         animator.ResetTrigger("BossSpeical");
         animator.SetTrigger("BossSpeical");
+        groundSmashHB.enabled = true;
 
         yield return null;
 
@@ -127,7 +125,7 @@ public class DemonBoss : BaseBoss
         yield return new WaitForSeconds(length);
 
         nextSpecialTime = Time.time + specialCooldown;
-
+        groundSmashHB.enabled = false;
         isAttacking = false;
         agent.isStopped = false;
     }

@@ -24,6 +24,7 @@ public class BaseBoss : MonoBehaviour
     public float distanceToPlayer;
     [Header("Attacks Bools")]
     public bool isAttacking;
+    public bool rangeAttack;
     public bool speicalAttack;
     [Header("Cooldowns")]
     public float rangeCooldown = 3f;
@@ -44,6 +45,7 @@ public class BaseBoss : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
         groundSmashHB = GameObject.FindWithTag("GroundSmashHitBox").GetComponent<BoxCollider>();
+        groundSmashHB.enabled = false;
         animator.speed = normalSpeed;
         currentHealth = maxHealth;
     }
