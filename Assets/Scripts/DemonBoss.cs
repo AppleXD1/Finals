@@ -1,10 +1,13 @@
-using UnityEngine;
-using UnityEngine.AI;
 using System.Collections;
 using System.Diagnostics;
+using Unity.VisualScripting;
+using UnityEngine;
+using UnityEngine.AI;
+using UnityEngine.UIElements;
 using Debug = UnityEngine.Debug;
 public class DemonBoss : BaseBoss
 {
+    public ParticleSystem PSclouds;
    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     protected override void Start()
@@ -113,7 +116,7 @@ public class DemonBoss : BaseBoss
         animator.ResetTrigger("BossSpeical");
         animator.SetTrigger("BossSpeical");
         groundSmashHB.enabled = true;
-
+       
         yield return null;
 
         while (!animator.GetCurrentAnimatorStateInfo(0).IsName("DownSlamDemon"))
@@ -128,5 +131,17 @@ public class DemonBoss : BaseBoss
         groundSmashHB.enabled = false;
         isAttacking = false;
         agent.isStopped = false;
+    }
+
+    IEnumerator CloudsDestroy()
+    {
+        var clouds = Instantiate(PSclouds,groundSmashHB.transform.position, groundSmashHB.transform.rotation);
+        yield return new WaitForSeconds(2f);
+        Destroy(clouds);
+    }
+
+    public void CreateClouds()
+    {
+        StartCoroutine(CloudsDestroy());
     }
 }

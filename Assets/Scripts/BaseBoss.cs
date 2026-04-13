@@ -67,7 +67,7 @@ public class BaseBoss : MonoBehaviour
     public virtual void TakeDamage(float damage)
     {
         currentHealth -= damage;
-        if(currentHealth < 0)
+        if(currentHealth <= 0)
         {
             Death();
         }
@@ -75,6 +75,7 @@ public class BaseBoss : MonoBehaviour
         if (currentHealth <= 50 && currentHealth > 1)
         {
             Stage2();
+            isAnger = true;
         }
     }
 
@@ -124,7 +125,8 @@ public class BaseBoss : MonoBehaviour
     } 
     public virtual void Stage2()
     {
-        Debug.Log("BaseBosee Stage2");
+        animator.speed = 1.3f;
+        agent.speed *= 1.2f;
     }
 
     public virtual void SpawnProjectile()

@@ -1510,6 +1510,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 549664149954949246, guid: 2d1cc2305b6e8dc44b725f2a4f7c088c, type: 3}
   projectileSpeed: 12
   groundSmashHB: {fileID: 0}
+  PSclouds: {fileID: 2852654189387178647, guid: d25285713186da649bafa956f64c7498, type: 3}
 --- !u!95 &1932644857
 Animator:
   serializedVersion: 7
