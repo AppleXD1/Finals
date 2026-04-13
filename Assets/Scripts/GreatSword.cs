@@ -22,9 +22,11 @@ public class GreatSword : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         BaseBoss enemy = other.GetComponent<BaseBoss>();
+        Player player = GameObject.FindWithTag("Player").GetComponent<Player>();
 
-        if (enemy != null && other.gameObject.CompareTag("Boss"))
+        if (enemy != null && other.gameObject.CompareTag("Boss") && player.isAttacking)
         {
+            DisableBoxTrigger();
             enemy.TakeDamage(Damage);
             Debug.Log("Hit " + enemy.name + " for " + Damage);
         }

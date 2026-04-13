@@ -5,9 +5,9 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class CombotSystem : MonoBehaviour
-{
-  
-
+{   
+    public Player player;
+    
     public List<AttackSO> combo;
     float lastClickTime;
     float timeBetweenCombo = 0.3f;
@@ -22,6 +22,7 @@ public class CombotSystem : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
+        player = GameObject.FindWithTag("Player").GetComponent<Player>();
     }
 
     // Update is called once per frame
@@ -39,6 +40,8 @@ public class CombotSystem : MonoBehaviour
         if (Time.time - lastComboEnd > timeBetweenCombo && comboCounter < combo.Count)
         {
             CancelInvoke("EndCombo");
+            sword.EnableBoxTrigger();
+            player.isAttacking = true;
             var m_clipInfo = animator.GetCurrentAnimatorClipInfo(0);
             float clipLength = m_clipInfo[0].clip.length;
             if (Time.time - lastClickTime >= clipLength - 0.1)
@@ -60,6 +63,7 @@ public class CombotSystem : MonoBehaviour
                     Debug.Log("Current Combo Index: " + comboCounter);
                     Debug.Log("Attack Name: " + combo[comboCounter].name);
                 }
+                
             }
         }
     }
@@ -69,12 +73,14 @@ public class CombotSystem : MonoBehaviour
         if(animator.GetCurrentAnimatorStateInfo(1).normalizedTime > 0.9f && animator.GetCurrentAnimatorStateInfo(1).IsTag("Attack"))
         {
             Invoke("EndCombo", 1);
+            sword.EnableBoxTrigger();
         }
     }
 
     void EndCombo()
     {
         comboCounter = 0;
+        player.isAttacking = false;
         lastComboEnd = Time.time;
     }
 }

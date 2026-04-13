@@ -36,8 +36,11 @@ public class BaseBoss : MonoBehaviour
     public float projectileSpeed = 24f;
     [Header("HitBoxs")]
     public BoxCollider groundSmashHB;
-    
 
+    protected virtual void Awake()
+    {
+        currentHealth = maxHealth;
+    }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     protected virtual void Start()
     {
@@ -82,6 +85,8 @@ public class BaseBoss : MonoBehaviour
     public virtual void Death()
     {
         Debug.Log("BaseBosee Death");
+        animator.SetBool("isDead", true);
+        agent.enabled = false;
     }
 
     public virtual void SpeicalAttack()
@@ -125,7 +130,7 @@ public class BaseBoss : MonoBehaviour
     } 
     public virtual void Stage2()
     {
-        animator.speed = 1.3f;
+        animator.speed = 1.5f;
         agent.speed *= 1.2f;
     }
 

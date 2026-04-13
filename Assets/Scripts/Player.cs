@@ -14,23 +14,27 @@ public class Player : MonoBehaviour
 
     public float moveSpeed = 6f;
     public bool canDash;
+    public bool isAttacking;
     public Rigidbody rb;
     public Animator animator;
 
     public float Health;
-    private float MaxHealth = 100;
+    public float MaxHealth = 100;
     public float Stamina;
-    private float MaxStamina = 50;
+    public float MaxStamina = 50;
 
     private Vector2 moveInput;
 
+    private void Awake()
+    {
+        Health = MaxHealth;
+        Stamina = MaxStamina;
+    }
     void Start()
     {
         playerInput = GetComponent<PlayerInput>();
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
-        Health = MaxHealth;
-        Stamina = MaxStamina;
         moveAction = playerInput.actions.FindAction("Move");
         dashAction = playerInput.actions.FindAction("Dash");
         canDash = true;
@@ -39,11 +43,17 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-            moveInput = moveAction.ReadValue<Vector2>();
-            animator.SetFloat("MoveX", moveInput.x);
-            animator.SetFloat("MoveY", moveInput.y);
-           
-
+        float timer = 0f;
+        moveInput = moveAction.ReadValue<Vector2>();
+        animator.SetFloat("MoveX", moveInput.x);
+        animator.SetFloat("MoveY", moveInput.y);
+        timer += Time.deltaTime;
+        if( timer >= 3f && Stamina < MaxStamina)
+        {
+            Stamina += 3f;
+            timer = 0f;
+        }
+    
     }
 
     void FixedUpdate()
@@ -89,6 +99,8 @@ public class Player : MonoBehaviour
         canDash = true;
 
     }
+
+    
 
     public void TakenDamage(float damage)
     {
