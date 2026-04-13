@@ -135,7 +135,7 @@ public class DemonBoss : BaseBoss
 
     IEnumerator CloudsDestroy()
     {
-        var clouds = Instantiate(PSclouds,groundSmashHB.transform.position, groundSmashHB.transform.rotation);
+        var clouds = Instantiate(PSclouds, groundSmashHB.transform.position, Quaternion.Euler(-90f, 0f, 0f));
         yield return new WaitForSeconds(2f);
         Destroy(clouds);
     }
