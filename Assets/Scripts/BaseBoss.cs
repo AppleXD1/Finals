@@ -26,6 +26,7 @@ public class BaseBoss : MonoBehaviour
     public bool isAttacking;
     public bool rangeAttack;
     public bool speicalAttack;
+    public bool isTakenDamage;
     [Header("Cooldowns")]
     public float rangeCooldown = 3f;
     public float specialCooldown = 6f;
@@ -69,6 +70,7 @@ public class BaseBoss : MonoBehaviour
 
     public virtual void TakeDamage(float damage)
     {
+        isTakenDamage = true;
         currentHealth -= damage;
         if(currentHealth <= 0)
         {
@@ -132,6 +134,7 @@ public class BaseBoss : MonoBehaviour
     {
         animator.speed = 1.5f;
         agent.speed *= 1.2f;
+        
     }
 
     public virtual void SpawnProjectile()

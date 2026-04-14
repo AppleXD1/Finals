@@ -3,7 +3,7 @@ using UnityEngine;
 public class DemonHitBox : MonoBehaviour
 {
     public BaseBoss boss;
-    public float damage = 3;
+    public float damage = 12;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -21,14 +21,31 @@ public class DemonHitBox : MonoBehaviour
         var player = other.GetComponent<Player>();
         if(other.gameObject.CompareTag("Player") && boss.isAttacking && !boss.speicalAttack)
         {
-            player.TakenDamage(damage);
-            Debug.Log("Punch hit");
+            if(boss.isAnger)
+            {
+                player.TakenDamage(damage * 2);
+                Debug.Log("Punch hit");
+            }
+            else
+            {
+                player.TakenDamage(damage);
+                Debug.Log("Punch hit");
+            }
+                
         }
 
         if(other.gameObject.CompareTag("Player") && boss.isAttacking && boss.speicalAttack)
         {
-            player.TakenDamage(damage * 2);
-            Debug.Log("Speical hit");
+            if (boss.isAnger)
+            {
+                player.TakenDamage(damage * 5);
+                Debug.Log("Punch hit");
+            }
+            else
+            {
+                player.TakenDamage(damage * 2);
+                Debug.Log("Punch hit");
+            }
         }
     }
 }

@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
+using System.Collections;
 
 public class GreatSword : MonoBehaviour
 {
@@ -24,11 +25,14 @@ public class GreatSword : MonoBehaviour
         BaseBoss enemy = other.GetComponent<BaseBoss>();
         Player player = GameObject.FindWithTag("Player").GetComponent<Player>();
 
-        if (enemy != null && other.gameObject.CompareTag("Boss") && player.isAttacking)
+        if (enemy != null && other.gameObject.CompareTag("Boss") && player.isAttacking && !enemy.isTakenDamage)
         {
+            enemy.isTakenDamage = true;
             DisableBoxTrigger();
             enemy.TakeDamage(Damage);
             Debug.Log("Hit " + enemy.name + " for " + Damage);
+            Wait();
+            enemy.isTakenDamage = false;
         }
     }
 
@@ -41,5 +45,16 @@ public class GreatSword : MonoBehaviour
     public void DisableBoxTrigger()
     {
         hitBox.enabled = false;
+    }
+
+    IEnumerator WaitSeconds()
+    {
+        yield return new WaitForSeconds(2f);
+        EnableBoxTrigger();
+    }
+
+    void Wait()
+    {
+        StartCoroutine(WaitSeconds());
     }
 }

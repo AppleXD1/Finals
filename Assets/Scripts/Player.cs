@@ -22,6 +22,7 @@ public class Player : MonoBehaviour
     public float MaxHealth = 100;
     public float Stamina;
     public float MaxStamina = 50;
+    public float timer = 0f;
 
     private Vector2 moveInput;
 
@@ -43,7 +44,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        float timer = 0f;
+        
         moveInput = moveAction.ReadValue<Vector2>();
         animator.SetFloat("MoveX", moveInput.x);
         animator.SetFloat("MoveY", moveInput.y);
@@ -107,7 +108,7 @@ public class Player : MonoBehaviour
         Health -= damage;
         if(Health < 0 )
         {
-            Debug.Log("ded");
+            playerInput.DeactivateInput();
         }
     }
 }

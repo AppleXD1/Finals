@@ -144,4 +144,11 @@ public class DemonBoss : BaseBoss
     {
         StartCoroutine(CloudsDestroy());
     }
+
+    public override void Stage2()
+    {
+        base.Stage2();
+        specialCooldown = 4.5f;
+        rangeCooldown = 2.5f;
+    }
 }
