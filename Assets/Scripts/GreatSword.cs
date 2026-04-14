@@ -6,6 +6,7 @@ using System.Collections;
 public class GreatSword : MonoBehaviour
 {
     public float Damage;
+    public bool hasSwing = false;
     BoxCollider hitBox;
     private HashSet<BaseBoss> hitEnemies = new HashSet<BaseBoss>();
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -25,9 +26,9 @@ public class GreatSword : MonoBehaviour
         BaseBoss enemy = other.GetComponent<BaseBoss>();
         Player player = GameObject.FindWithTag("Player").GetComponent<Player>();
 
-        if (enemy != null && other.gameObject.CompareTag("Boss") && player.isAttacking && !enemy.isTakenDamage)
+        if (enemy != null && other.gameObject.CompareTag("Boss") && player.isAttacking && !hasSwing)
         {
-            enemy.isTakenDamage = true;
+            hasSwing = true;
             DisableBoxTrigger();
             enemy.TakeDamage(Damage);
             Debug.Log("Hit " + enemy.name + " for " + Damage);
@@ -40,6 +41,7 @@ public class GreatSword : MonoBehaviour
     {
         hitEnemies.Clear();
         hitBox.enabled = true;
+        hasSwing = false;
     }
 
     public void DisableBoxTrigger()

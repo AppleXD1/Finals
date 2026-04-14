@@ -40,7 +40,6 @@ public class CombotSystem : MonoBehaviour
         if (Time.time - lastComboEnd > timeBetweenCombo && comboCounter < combo.Count)
         {
             CancelInvoke("EndCombo");
-            sword.EnableBoxTrigger();
             player.isAttacking = true;
             var m_clipInfo = animator.GetCurrentAnimatorClipInfo(0);
             float clipLength = m_clipInfo[0].clip.length;

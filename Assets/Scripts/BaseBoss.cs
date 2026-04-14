@@ -145,10 +145,8 @@ public class BaseBoss : MonoBehaviour
         Vector3 dir = (playerObj.transform.position - projectileSpawnPoint.position).normalized;
 
         Rigidbody rb = proj.GetComponent<Rigidbody>();
-        if (rb != null)
-        {
-            rb.linearVelocity = dir * projectileSpeed;
-        }
+        rb.linearVelocity = dir * projectileSpeed;
+        
 
         proj.transform.forward = dir;
     }
