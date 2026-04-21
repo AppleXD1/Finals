@@ -22,6 +22,9 @@ public class BaseBoss : MonoBehaviour
     public Vector3 enemyLocation;
     public Vector3 playerTarget;
     public float distanceToPlayer;
+    public float distanceSpeical;
+    public float distanceRange;
+    public float distanceAttack;
     [Header("Attacks Bools")]
     public bool isAttacking;
     public bool rangeAttack;
@@ -113,17 +116,17 @@ public class BaseBoss : MonoBehaviour
 
         if (!isAttacking)
         {
-            if (distanceToPlayer < 1.3f && Time.time >= nextSpecialTime)
+            if (distanceToPlayer < distanceSpeical && Time.time >= nextSpecialTime)
             {
                 SpeicalAttack();
                 nextSpecialTime = Time.time + specialCooldown;
             }
-            else if (distanceToPlayer > 3f && Time.time >= nextRangeTime)
+            else if (distanceToPlayer > distanceRange && Time.time >= nextRangeTime)
             {
                 RangeAttack();
                 nextRangeTime = Time.time + rangeCooldown;
             }
-            else if (distanceToPlayer < 1.3f)
+            else if (distanceToPlayer < distanceAttack)
             {
                 BaseAttack();
             }

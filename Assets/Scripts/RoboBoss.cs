@@ -28,36 +28,37 @@ public class RoboBoss : BaseBoss
 
     }
 
-   /* public override void BaseAttack()
+    public override void BaseAttack()
     {
         base.BaseAttack();
+        Debug.Log("Overide attack");
         if (isAttacking) return;
 
         isAttacking = true;
         StartCoroutine(BaseAttackWait());
 
     }
+    /*
+        public override void RangeAttack()
+        {
+            base.RangeAttack();
+            if (isAttacking) return;
 
-    public override void RangeAttack()
-    {
-        base.RangeAttack();
-        if (isAttacking) return;
+            isAttacking = true;
+            StartCoroutine(RangeAttackWait());
+        }
 
-        isAttacking = true;
-        StartCoroutine(RangeAttackWait());
-    }
+        public override void SpeicalAttack()
+        {
 
-    public override void SpeicalAttack()
-    {
+            if (isAttacking) return;
+            base.SpeicalAttack();
 
-        if (isAttacking) return;
-        base.SpeicalAttack();
-
-        speicalAttack = true;
-        isAttacking = true;
-        StartCoroutine(BossSpeicalWait());
-    }
-*/
+            speicalAttack = true;
+            isAttacking = true;
+            StartCoroutine(BossSpeicalWait());
+        }
+    */
     IEnumerator BaseAttackWait()
     {
         agent.isStopped = true;

@@ -198,6 +198,9 @@ MonoBehaviour:
   enemyLocation: {x: 0, y: 0, z: 0}
   playerTarget: {x: 0, y: 0, z: 0}
   distanceToPlayer: 0
+  distanceSpeical: 1.3
+  distanceRange: 3
+  distanceAttack: 1.3
   isAttacking: 0
   rangeAttack: 0
   speicalAttack: 0
