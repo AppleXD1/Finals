@@ -31,11 +31,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Optimus Primal|ArmatureAction
-      takeName: Optimus Primal|ArmatureAction
+      name: Optimus Primal|Walk.001 (1)
+      takeName: Optimus Primal|Walk.001
       internalID: 8232648297151160039
       firstFrame: 0
-      lastFrame: 80
+      lastFrame: 14.6
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

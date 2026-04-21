@@ -28,7 +28,7 @@ public class RoboBoss : BaseBoss
 
     }
 
-    public override void BaseAttack()
+   /* public override void BaseAttack()
     {
         base.BaseAttack();
         if (isAttacking) return;
@@ -57,7 +57,7 @@ public class RoboBoss : BaseBoss
         isAttacking = true;
         StartCoroutine(BossSpeicalWait());
     }
-
+*/
     IEnumerator BaseAttackWait()
     {
         agent.isStopped = true;
