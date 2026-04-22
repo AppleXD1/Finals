@@ -38,7 +38,7 @@ public class RoboBoss : BaseBoss
         StartCoroutine(BaseAttackWait());
 
     }
-    /*
+   
         public override void RangeAttack()
         {
             base.RangeAttack();
@@ -47,18 +47,18 @@ public class RoboBoss : BaseBoss
             isAttacking = true;
             StartCoroutine(RangeAttackWait());
         }
+    /*
+           public override void SpeicalAttack()
+           {
 
-        public override void SpeicalAttack()
-        {
+               if (isAttacking) return;
+               base.SpeicalAttack();
 
-            if (isAttacking) return;
-            base.SpeicalAttack();
-
-            speicalAttack = true;
-            isAttacking = true;
-            StartCoroutine(BossSpeicalWait());
-        }
-    */
+               speicalAttack = true;
+               isAttacking = true;
+               StartCoroutine(BossSpeicalWait());
+           }
+       */
     IEnumerator BaseAttackWait()
     {
         agent.isStopped = true;
@@ -95,7 +95,7 @@ public class RoboBoss : BaseBoss
 
         yield return null;
 
-        while (!animator.GetCurrentAnimatorStateInfo(0).IsName("Throwing"))
+        while (!animator.GetCurrentAnimatorStateInfo(0).IsName("RoboRange"))
         {
             yield return null;
         }
