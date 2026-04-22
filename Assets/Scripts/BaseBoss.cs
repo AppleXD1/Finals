@@ -118,6 +118,7 @@ public class BaseBoss : MonoBehaviour
         {
             if (distanceToPlayer < distanceSpeical && Time.time >= nextSpecialTime)
             {
+                Debug.Log("speicaldsfhidfhns");
                 SpeicalAttack();
                 nextSpecialTime = Time.time + specialCooldown;
             }

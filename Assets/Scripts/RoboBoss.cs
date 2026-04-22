@@ -9,6 +9,11 @@ using Debug = UnityEngine.Debug;
 public class RoboBoss : BaseBoss
 {
     public ParticleSystem PSclouds;
+    [Header("Explosive")]
+    public GameObject explosionPrefab;
+    public GameObject warningPrefab;
+    public float warningDelay = 0.8f;
+    public float spawnRadius = 3f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     protected override void Start()
@@ -47,18 +52,21 @@ public class RoboBoss : BaseBoss
             isAttacking = true;
             StartCoroutine(RangeAttackWait());
         }
-    /*
-           public override void SpeicalAttack()
-           {
 
-               if (isAttacking) return;
-               base.SpeicalAttack();
+    public override void SpeicalAttack()
+    {
+        if (isAttacking) return;
 
-               speicalAttack = true;
-               isAttacking = true;
-               StartCoroutine(BossSpeicalWait());
-           }
-       */
+        base.SpeicalAttack();
+        Debug.Log("demonBoss Speical");
+
+        isAttacking = true;
+        agent.isStopped = true;
+        agent.velocity = Vector3.zero;
+
+        animator.SetTrigger("BossSpecial");
+    }
+
     IEnumerator BaseAttackWait()
     {
         agent.isStopped = true;
@@ -109,42 +117,33 @@ public class RoboBoss : BaseBoss
         agent.isStopped = false;
 
     }
-
-    IEnumerator BossSpeicalWait()
+    IEnumerator WarningThenExplosion(Vector3 spawnPos)
     {
-        agent.isStopped = true;
-        agent.velocity = Vector3.zero;
-        animator.SetBool("isMoving", false);
-        animator.ResetTrigger("BossSpeical");
-        animator.SetTrigger("BossSpeical");
-        groundSmashHB.enabled = true;
+        GameObject warning = Instantiate(warningPrefab, spawnPos, Quaternion.identity);
 
-        yield return null;
+        yield return new WaitForSeconds(warningDelay);
 
-        while (!animator.GetCurrentAnimatorStateInfo(0).IsName("DownSlamDemon"))
+        if (warning != null)
         {
-            yield return null;
+            Destroy(warning);
         }
 
-        float length = animator.GetCurrentAnimatorStateInfo(0).length;
-        yield return new WaitForSeconds(length);
+        Instantiate(explosionPrefab, spawnPos, Quaternion.identity);
+    }
 
-        nextSpecialTime = Time.time + specialCooldown;
-        groundSmashHB.enabled = false;
+    public void SpawnWarningExplosion()
+    {
+        Vector3 randomOffset = new Vector3(Random.Range(-spawnRadius, spawnRadius), 0f, Random.Range(-spawnRadius, spawnRadius));
+
+        Vector3 spawnPos = playerObj.transform.position + randomOffset;
+
+        StartCoroutine(WarningThenExplosion(spawnPos));
+    }
+
+    public void EndSpecialAttack()
+    {
         isAttacking = false;
         agent.isStopped = false;
-    }
-
-    IEnumerator CloudsDestroy()
-    {
-        var clouds = Instantiate(PSclouds, groundSmashHB.transform.position, Quaternion.Euler(-90f, 0f, 0f));
-        yield return new WaitForSeconds(2f);
-        Destroy(clouds);
-    }
-
-    public void CreateClouds()
-    {
-        StartCoroutine(CloudsDestroy());
     }
 
     public override void Stage2()
