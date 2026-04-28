@@ -14,6 +14,7 @@ public class BaseBoss : MonoBehaviour
     public bool isAnger;
     public float damage = 10;
     public float timer = 0;
+    public bool isDead;
     [Header("Animation/Speed")]
     protected Animator animator;
     public float normalSpeed = 1.0f;
@@ -48,6 +49,7 @@ public class BaseBoss : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     protected virtual void Start()
     {
+        isDead = true;
         playerObj = GameObject.FindWithTag("Player");
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
@@ -90,6 +92,7 @@ public class BaseBoss : MonoBehaviour
     public virtual void Death()
     {
         Debug.Log("BaseBosee Death");
+        isDead = true;
         animator.SetBool("isDead", true);
         agent.enabled = false;
     }

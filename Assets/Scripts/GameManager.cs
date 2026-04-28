@@ -1,6 +1,9 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
+using System.Collections;
+using System.Diagnostics;
 
 public class GameManager : MonoBehaviour
 {
@@ -47,6 +50,21 @@ public class GameManager : MonoBehaviour
         healthBarSlider.value = currPlayerHealth;
         BossHPSlider.value = currBossHealth;
         StaminaBar.value = playerStamina;
+        NextScence();
 
+    }
+
+    void NextScence()
+    {
+        if(boss.isDead)
+        {
+            StartCoroutine(SwitchScence());
+        }
+    }
+
+    IEnumerator SwitchScence()
+    {
+        yield return new WaitForSeconds(2);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

@@ -79,6 +79,7 @@ public class CombotSystem : MonoBehaviour
     void EndCombo()
     {
         comboCounter = 0;
+        sword.DisableBoxTrigger();
         player.isAttacking = false;
         lastComboEnd = Time.time;
     }
