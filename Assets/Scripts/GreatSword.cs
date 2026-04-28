@@ -27,7 +27,7 @@ public class GreatSword : MonoBehaviour
         {
             hitEnemies.Add(boss);
 
-            boss.currentHealth -= Damage;
+            boss.TakeDamage(Damage);
 
             Debug.Log("Hit boss once");
         }

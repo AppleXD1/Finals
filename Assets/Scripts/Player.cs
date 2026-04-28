@@ -23,6 +23,7 @@ public class Player : MonoBehaviour
     public float Stamina;
     public float MaxStamina = 50;
     public float timer = 0f;
+    public bool isDead;
 
     private Vector2 moveInput;
 

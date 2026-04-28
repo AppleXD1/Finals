@@ -151,4 +151,9 @@ public class DemonBoss : BaseBoss
         specialCooldown = 4.5f;
         rangeCooldown = 2.5f;
     }
+
+    public override void Death()
+    {
+        base.Death();
+    }
 }

@@ -49,7 +49,7 @@ public class BaseBoss : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     protected virtual void Start()
     {
-        isDead = true;
+        isDead = false;
         playerObj = GameObject.FindWithTag("Player");
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
@@ -75,7 +75,7 @@ public class BaseBoss : MonoBehaviour
 
     public virtual void TakeDamage(float damage)
     {
-        isTakenDamage = true;
+        
         currentHealth -= damage;
         if(currentHealth <= 0)
         {
@@ -139,6 +139,7 @@ public class BaseBoss : MonoBehaviour
     } 
     public virtual void Stage2()
     {
+        Debug.Log("Stage 2");
         animator.speed = 1.5f;
         agent.speed *= 1.2f;
         
