@@ -6,22 +6,22 @@ using UnityEngine.UI;
 public class Retry : MonoBehaviour
 {
     public Player player;
-    public Button Button;
+    public GameObject Button;
 
     private void Start()
     {
         player = GameObject.FindWithTag("Player").GetComponent<Player>();
-    }
 
+    }
     private void Update()
     {
         if (player.isDead)
         {
-            Button.enabled = true;
+            Button.SetActive(true);
         }
         else
         {
-            Button.enabled = false;
+            Button.SetActive(false);
         }
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created

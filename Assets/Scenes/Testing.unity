@@ -4394,6 +4394,7 @@ GameObject:
   m_Component:
   - component: {fileID: 271577461}
   - component: {fileID: 271577460}
+  - component: {fileID: 271577462}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -4438,6 +4439,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &271577462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 271577459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f7cf34ee3c00d94bb3172f53025ee5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Retry
+  player: {fileID: 0}
+  Button: {fileID: 389041112}
 --- !u!1001 &285664522
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6078,7 +6093,7 @@ GameObject:
   - component: {fileID: 389041114}
   m_Layer: 5
   m_Name: Button
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6116,7 +6131,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Retry
   player: {fileID: 0}
-  Button: {fileID: 389041115}
+  Button: {fileID: 0}
 --- !u!114 &389041115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6161,13 +6176,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: 7f7cf34ee3c00d94bb3172f53025ee5c, type: 3}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 271577462}
+        m_TargetAssemblyTypeName: Retry, Assembly-CSharp
+        m_MethodName: ReloadScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -26404,7 +26419,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: 'Retry?
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -40065,7 +40082,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5875583174283312707, guid: 7586536cccea3324d90e8552a4ce7c93, type: 3}
       propertyPath: MaxHealth
-      value: 5000
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5875583174283312707, guid: 7586536cccea3324d90e8552a4ce7c93, type: 3}
       propertyPath: cameraTransform

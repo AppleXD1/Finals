@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
     {
         player = GameObject.FindWithTag("Player").GetComponent<Player>();
         boss = GameObject.FindWithTag("Boss").GetComponent<BaseBoss>();
-
+        Time.timeScale = 1f;
         maxPlayerHP = player.MaxHealth;
         maxBossHP = boss.maxHealth;
 

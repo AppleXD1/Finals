@@ -40,6 +40,7 @@ public class Player : MonoBehaviour
         moveAction = playerInput.actions.FindAction("Move");
         dashAction = playerInput.actions.FindAction("Dash");
         canDash = true;
+        isDead = false;
     }
 
 
@@ -110,6 +111,10 @@ public class Player : MonoBehaviour
         if(Health < 0 )
         {
             playerInput.DeactivateInput();
+            isDead = true;
+            Time.timeScale = 0f;
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
         }
     }
 }
