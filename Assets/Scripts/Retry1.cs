@@ -3,26 +3,19 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class Retry : MonoBehaviour
+public class Retry1 : MonoBehaviour
 {
-    private Player player;
+   
     public GameObject Button;
 
     private void Start()
     {
-        player = GameObject.FindWithTag("Player").GetComponent<Player>();
+        
 
     }
     private void Update()
     {
-        if (player.isDead)
-        {
-            Button.SetActive(true);
-        }
-        else
-        {
-            Button.SetActive(false);
-        }
+       
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public void ReloadScene()
