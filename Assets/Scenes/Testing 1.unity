@@ -6097,7 +6097,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f7cf34ee3c00d94bb3172f53025ee5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Retry
-  player: {fileID: 0}
   Button: {fileID: 582501630}
 --- !u!1001 &280796516
 PrefabInstance:
